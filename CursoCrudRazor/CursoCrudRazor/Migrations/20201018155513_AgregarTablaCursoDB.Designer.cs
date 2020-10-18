@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CursoCrudRazor.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200906023223_AgregarTablaCursoDB")]
+    [Migration("20201018155513_AgregarTablaCursoDB")]
     partial class AgregarTablaCursoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,6 +19,28 @@ namespace CursoCrudRazor.Migrations
                 .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("CursoCrudRazor.Models.Curso", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CantidadClases")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombreCurso")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Precio")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cursos");
+                });
 #pragma warning restore 612, 618
         }
     }

@@ -14,3 +14,40 @@
     </div>
 </div>
 
+@if (Model.Cursos.Count() > 0)
+{
+    <br>
+<table class=" table table-striped border">
+    <tr class="table-secondary">
+        <th>
+            @Html.DisplayFor(m => m.Cursos.FirstOrDefault().NombreCurso)
+        </th>
+        <th>
+            @Html.DisplayFor(m => m.Cursos.FirstOrDefault().CantidadClases)
+        </th>
+        <th>
+            @Html.DisplayFor(m => m.Cursos.FirstOrDefault().Precio)
+        </th>
+        <th>
+                Acciones
+        </th>
+    </tr>
+    @foreach(var item in Model.Cursos)
+    {
+    <tr>
+        <td>@Html.DisplayFor(m => item.NombreCurso)</td>
+        <td>@Html.DisplayFor(m => item.CantidadClases)</td>
+        <td>@Html.DisplayFor(m => item.Precio)</td>
+        <td>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+            <a asp-route-id="@item.Id" asp-page="Edit" class="btn btn-success btn-sm">Editar</a>
+        </td>
+    </tr>
+    }
+</table>
+
+}else
+{
+    <p>No hay cursos disponibles</p>
+}
+

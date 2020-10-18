@@ -10,12 +10,13 @@ namespace CursoCrudRazor.Pages.ListaCurso
 {
     public class CreateModel : PageModel
     {
-        private readonly ApplicationDbContext _db;
-        public CreateModel(ApplicationDbContext db)
+        private readonly ApplicationDbContext _db; //para usar el constructor
+        public CreateModel(ApplicationDbContext db) //constructor para el contexto
         {
             _db = db;
 
         }
+
         [BindProperty] //Vincular con la clase de Curso (tbl)
         public Curso Curso { get; set; }
         public void OnGet()
@@ -28,9 +29,9 @@ namespace CursoCrudRazor.Pages.ListaCurso
             {
                 return Page();// para retornar a la misma pagina
             }
-            _db.Add(Curso);
-            await _db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            _db.Add(Curso);// para guardar en la bdd
+            await _db.SaveChangesAsync(); // xq usamos un metodo asincrono
+            return RedirectToPage("Index"); //redirige a la pagina de inicio
         }
     }
 }
