@@ -149,3 +149,4 @@ C:\Users\Diegoec\Documents\GitHub\NetCore\CursoCrudRazor\CursoCrudRazor\obj\Debu
 C:\Users\Diegoec\Documents\GitHub\NetCore\CursoCrudRazor\CursoCrudRazor\obj\Debug\netcoreapp3.1\CursoCrudRazor.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Diegoec\Documents\GitHub\NetCore\CursoCrudRazor\CursoCrudRazor\obj\Debug\netcoreapp3.1\Razor\Pages\ListaCurso\Index.cshtml.g.cs
 C:\Users\Diegoec\Documents\GitHub\NetCore\CursoCrudRazor\CursoCrudRazor\obj\Debug\netcoreapp3.1\Razor\Pages\ListaCurso\Create.cshtml.g.cs
+C:\Users\Diegoec\Documents\GitHub\NetCore\CursoCrudRazor\CursoCrudRazor\obj\Debug\netcoreapp3.1\Razor\Pages\ListaCurso\Edit.cshtml.g.cs

@@ -1,16 +1,17 @@
 ﻿@page
-@model CursoCrudRazor.Pages.ListaCurso.CreateModel
+@model CursoCrudRazor.Pages.ListaCurso.EditModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
 <br />
-<h2 class="text-info">Crear Nuevo Curso</h2>
+<h2 class="text-info">Editar Curso</h2>
 
 <div class="border">
     <form method="post">
         @*validaciones sobre los campos mapeados en el Models requeridos del lado del servidor*@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type ="hidden" asp-for="Curso.Id" />
         <div class="container" style="padding:30px;">
             <div class="form-group">
                 <div class="row">
@@ -51,7 +52,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-2 offset-sm-2">
-                        <input type="submit" value="Crear" class="btn btn-primary form-control" />
+                        <input type="submit" value="Actualizar" class="btn btn-primary form-control" />
                     </div>
                     <div class="col-sm-2">
                         <a asp-page="Index" class="btn btn-success form-control">Volver a Lista</a>
@@ -64,6 +65,7 @@
     </form>
 </div>
 
-@section Scripts{
+@section Scripts{ 
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
+

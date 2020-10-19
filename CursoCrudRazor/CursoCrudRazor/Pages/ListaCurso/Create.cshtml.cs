@@ -19,6 +19,9 @@ namespace CursoCrudRazor.Pages.ListaCurso
 
         [BindProperty] //Vincular con la clase de Curso (tbl)
         public Curso Curso { get; set; }
+
+        [TempData]
+        public string Mensaje { get; set; }
         public void OnGet()
         {
 
@@ -31,6 +34,7 @@ namespace CursoCrudRazor.Pages.ListaCurso
             }
             _db.Add(Curso);// para guardar en la bdd
             await _db.SaveChangesAsync(); // xq usamos un metodo asincrono
+            Mensaje = "Curso creado correctamente";
             return RedirectToPage("Index"); //redirige a la pagina de inicio
         }
     }
